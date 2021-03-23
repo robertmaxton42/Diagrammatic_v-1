@@ -13,13 +13,165 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)sharpgen.runtime\1.2.1\build\SharpGen.Runtime.props" Condition="Exists('$(NuGetPackageRoot)sharpgen.runtime\1.2.1\build\SharpGen.Runtime.props')" />
+    <Import Project="$(NuGetPackageRoot)sharpgen.runtime.com\1.2.0\build\netstandard1.1\SharpGen.Runtime.COM.props" Condition="Exists('$(NuGetPackageRoot)sharpgen.runtime.com\1.2.0\build\netstandard1.1\SharpGen.Runtime.COM.props')" />
     <Import Project="$(NuGetPackageRoot)avalonia\0.9.7\build\Avalonia.props" Condition="Exists('$(NuGetPackageRoot)avalonia\0.9.7\build\Avalonia.props')" />
+    <Import Project="$(NuGetPackageRoot)avalonia.native\0.9.7\build\netstandard2.0\Avalonia.Native.props" Condition="Exists('$(NuGetPackageRoot)avalonia.native\0.9.7\build\netstandard2.0\Avalonia.Native.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_NETCore_Targets Condition=" '$(PkgMicrosoft_NETCore_Targets)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.targets\1.1.0</PkgMicrosoft_NETCore_Targets>
+    <PkgMicrosoft_NETCore_Platforms Condition=" '$(PkgMicrosoft_NETCore_Platforms)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.platforms\2.0.0</PkgMicrosoft_NETCore_Platforms>
+    <PkgSystem_Runtime Condition=" '$(PkgSystem_Runtime)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime\4.3.0</PkgSystem_Runtime>
+    <PkgSystem_Threading_Tasks Condition=" '$(PkgSystem_Threading_Tasks)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.tasks\4.3.0</PkgSystem_Threading_Tasks>
+    <PkgSystem_Text_Encoding Condition=" '$(PkgSystem_Text_Encoding)' == '' ">C:\Users\rmaxton\.nuget\packages\system.text.encoding\4.3.0</PkgSystem_Text_Encoding>
+    <PkgSystem_Security_Principal_Windows Condition=" '$(PkgSystem_Security_Principal_Windows)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.principal.windows\4.5.0</PkgSystem_Security_Principal_Windows>
+    <PkgSystem_Reflection_Primitives Condition=" '$(PkgSystem_Reflection_Primitives)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.primitives\4.3.0</PkgSystem_Reflection_Primitives>
+    <PkgSystem_IO Condition=" '$(PkgSystem_IO)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io\4.3.0</PkgSystem_IO>
+    <PkgSystem_Reflection Condition=" '$(PkgSystem_Reflection)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection\4.3.0</PkgSystem_Reflection>
+    <PkgSystem_Reflection_Emit_ILGeneration Condition=" '$(PkgSystem_Reflection_Emit_ILGeneration)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.emit.ilgeneration\4.3.0</PkgSystem_Reflection_Emit_ILGeneration>
+    <PkgSystem_Reflection_Emit Condition=" '$(PkgSystem_Reflection_Emit)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.emit\4.3.0</PkgSystem_Reflection_Emit>
+    <PkgTmds_DBus Condition=" '$(PkgTmds_DBus)' == '' ">C:\Users\rmaxton\.nuget\packages\tmds.dbus\0.7.0</PkgTmds_DBus>
+    <PkgSystem_Threading_Tasks_Extensions Condition=" '$(PkgSystem_Threading_Tasks_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.tasks.extensions\4.5.2</PkgSystem_Threading_Tasks_Extensions>
+    <PkgSystem_Text_RegularExpressions Condition=" '$(PkgSystem_Text_RegularExpressions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.text.regularexpressions\4.3.0</PkgSystem_Text_RegularExpressions>
+    <PkgSystem_Text_Encoding_Extensions Condition=" '$(PkgSystem_Text_Encoding_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.text.encoding.extensions\4.3.0</PkgSystem_Text_Encoding_Extensions>
+    <PkgSystem_Runtime_Handles Condition=" '$(PkgSystem_Runtime_Handles)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.handles\4.3.0</PkgSystem_Runtime_Handles>
+    <PkgSystem_Runtime_InteropServices Condition=" '$(PkgSystem_Runtime_InteropServices)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.interopservices\4.3.0</PkgSystem_Runtime_InteropServices>
+    <PkgSystem_Runtime_Extensions Condition=" '$(PkgSystem_Runtime_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.extensions\4.3.0</PkgSystem_Runtime_Extensions>
+    <PkgSystem_Globalization Condition=" '$(PkgSystem_Globalization)' == '' ">C:\Users\rmaxton\.nuget\packages\system.globalization\4.3.0</PkgSystem_Globalization>
+    <PkgSystem_Resources_ResourceManager Condition=" '$(PkgSystem_Resources_ResourceManager)' == '' ">C:\Users\rmaxton\.nuget\packages\system.resources.resourcemanager\4.3.0</PkgSystem_Resources_ResourceManager>
+    <PkgSystem_IO_FileSystem_Primitives Condition=" '$(PkgSystem_IO_FileSystem_Primitives)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io.filesystem.primitives\4.3.0</PkgSystem_IO_FileSystem_Primitives>
+    <PkgSystem_IO_FileSystem Condition=" '$(PkgSystem_IO_FileSystem)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io.filesystem\4.3.0</PkgSystem_IO_FileSystem>
+    <PkgSystem_Diagnostics_Debug Condition=" '$(PkgSystem_Diagnostics_Debug)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.debug\4.3.0</PkgSystem_Diagnostics_Debug>
+    <PkgSystem_Collections Condition=" '$(PkgSystem_Collections)' == '' ">C:\Users\rmaxton\.nuget\packages\system.collections\4.3.0</PkgSystem_Collections>
+    <PkgSystem_Xml_ReaderWriter Condition=" '$(PkgSystem_Xml_ReaderWriter)' == '' ">C:\Users\rmaxton\.nuget\packages\system.xml.readerwriter\4.3.0</PkgSystem_Xml_ReaderWriter>
+    <PkgSystem_Threading Condition=" '$(PkgSystem_Threading)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading\4.3.0</PkgSystem_Threading>
+    <PkgSystem_Xml_XPath Condition=" '$(PkgSystem_Xml_XPath)' == '' ">C:\Users\rmaxton\.nuget\packages\system.xml.xpath\4.3.0</PkgSystem_Xml_XPath>
+    <PkgSystem_Diagnostics_Tools Condition=" '$(PkgSystem_Diagnostics_Tools)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.tools\4.3.0</PkgSystem_Diagnostics_Tools>
+    <PkgSystem_Xml_XDocument Condition=" '$(PkgSystem_Xml_XDocument)' == '' ">C:\Users\rmaxton\.nuget\packages\system.xml.xdocument\4.3.0</PkgSystem_Xml_XDocument>
+    <PkgSystem_Linq Condition=" '$(PkgSystem_Linq)' == '' ">C:\Users\rmaxton\.nuget\packages\system.linq\4.3.0</PkgSystem_Linq>
+    <PkgSystem_Xml_XPath_XDocument Condition=" '$(PkgSystem_Xml_XPath_XDocument)' == '' ">C:\Users\rmaxton\.nuget\packages\system.xml.xpath.xdocument\4.3.0</PkgSystem_Xml_XPath_XDocument>
+    <PkgSystem_Xml_XmlDocument Condition=" '$(PkgSystem_Xml_XmlDocument)' == '' ">C:\Users\rmaxton\.nuget\packages\system.xml.xmldocument\4.3.0</PkgSystem_Xml_XmlDocument>
+    <PkgSystem_ValueTuple Condition=" '$(PkgSystem_ValueTuple)' == '' ">C:\Users\rmaxton\.nuget\packages\system.valuetuple\4.5.0</PkgSystem_ValueTuple>
+    <PkgSystem_Threading_ThreadPool Condition=" '$(PkgSystem_Threading_ThreadPool)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.threadpool\4.0.10</PkgSystem_Threading_ThreadPool>
+    <PkgSystem_Threading_Thread Condition=" '$(PkgSystem_Threading_Thread)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.thread\4.3.0</PkgSystem_Threading_Thread>
+    <PkgSystem_Diagnostics_Tracing Condition=" '$(PkgSystem_Diagnostics_Tracing)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.tracing\4.3.0</PkgSystem_Diagnostics_Tracing>
+    <PkgSystem_Collections_Concurrent Condition=" '$(PkgSystem_Collections_Concurrent)' == '' ">C:\Users\rmaxton\.nuget\packages\system.collections.concurrent\4.3.0</PkgSystem_Collections_Concurrent>
+    <PkgSystem_Threading_Tasks_Parallel Condition=" '$(PkgSystem_Threading_Tasks_Parallel)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.tasks.parallel\4.3.0</PkgSystem_Threading_Tasks_Parallel>
+    <PkgSystem_Reflection_TypeExtensions Condition=" '$(PkgSystem_Reflection_TypeExtensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.typeextensions\4.3.0</PkgSystem_Reflection_TypeExtensions>
+    <PkgSystem_Reflection_Extensions Condition=" '$(PkgSystem_Reflection_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.extensions\4.3.0</PkgSystem_Reflection_Extensions>
+    <PkgSystem_Reflection_Emit_Lightweight Condition=" '$(PkgSystem_Reflection_Emit_Lightweight)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.emit.lightweight\4.3.0</PkgSystem_Reflection_Emit_Lightweight>
+    <PkgSystem_ObjectModel Condition=" '$(PkgSystem_ObjectModel)' == '' ">C:\Users\rmaxton\.nuget\packages\system.objectmodel\4.3.0</PkgSystem_ObjectModel>
+    <PkgSystem_Linq_Expressions Condition=" '$(PkgSystem_Linq_Expressions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.linq.expressions\4.3.0</PkgSystem_Linq_Expressions>
+    <PkgSystem_Dynamic_Runtime Condition=" '$(PkgSystem_Dynamic_Runtime)' == '' ">C:\Users\rmaxton\.nuget\packages\system.dynamic.runtime\4.3.0</PkgSystem_Dynamic_Runtime>
+    <PkgSystem_Threading_Tasks_Dataflow Condition=" '$(PkgSystem_Threading_Tasks_Dataflow)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.tasks.dataflow\4.6.0</PkgSystem_Threading_Tasks_Dataflow>
+    <PkgSystem_Threading_Overlapped Condition=" '$(PkgSystem_Threading_Overlapped)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.overlapped\4.0.1</PkgSystem_Threading_Overlapped>
+    <PkgSystem_Text_Encoding_CodePages Condition=" '$(PkgSystem_Text_Encoding_CodePages)' == '' ">C:\Users\rmaxton\.nuget\packages\system.text.encoding.codepages\4.3.0</PkgSystem_Text_Encoding_CodePages>
+    <PkgSystem_Security_Principal Condition=" '$(PkgSystem_Security_Principal)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.principal\4.0.1</PkgSystem_Security_Principal>
+    <PkgSystem_Security_Cryptography_Primitives Condition=" '$(PkgSystem_Security_Cryptography_Primitives)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.cryptography.primitives\4.3.0</PkgSystem_Security_Cryptography_Primitives>
+    <Pkgruntime_ubuntu_16_10-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_ubuntu_16_10-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_ubuntu_16_10-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_ubuntu_16_04-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_ubuntu_16_04-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_ubuntu_16_04-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_ubuntu_14_04-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_ubuntu_14_04-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_ubuntu_14_04-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_rhel_7-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_rhel_7-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_rhel_7-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_osx_10_10-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_osx_10_10-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_osx_10_10-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_opensuse_42_1-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_opensuse_42_1-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_opensuse_42_1-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_opensuse_13_2-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_opensuse_13_2-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_opensuse_13_2-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_fedora_24-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_fedora_24-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_fedora_24-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_fedora_23-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_fedora_23-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_fedora_23-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_debian_8-x64_runtime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_debian_8-x64_runtime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_debian_8-x64_runtime_native_System_Security_Cryptography_OpenSsl>
+    <Pkgruntime_native_System_Security_Cryptography_OpenSsl Condition=" '$(Pkgruntime_native_System_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.native.system.security.cryptography.openssl\4.3.0</Pkgruntime_native_System_Security_Cryptography_OpenSsl>
+    <PkgSystem_Security_Cryptography_Encoding Condition=" '$(PkgSystem_Security_Cryptography_Encoding)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.cryptography.encoding\4.3.0</PkgSystem_Security_Cryptography_Encoding>
+    <PkgSystem_Runtime_Numerics Condition=" '$(PkgSystem_Runtime_Numerics)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.numerics\4.3.0</PkgSystem_Runtime_Numerics>
+    <Pkgruntime_osx_10_10-x64_runtime_native_System_Security_Cryptography_Apple Condition=" '$(Pkgruntime_osx_10_10-x64_runtime_native_System_Security_Cryptography_Apple)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple\4.3.0</Pkgruntime_osx_10_10-x64_runtime_native_System_Security_Cryptography_Apple>
+    <Pkgruntime_native_System_Security_Cryptography_Apple Condition=" '$(Pkgruntime_native_System_Security_Cryptography_Apple)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.native.system.security.cryptography.apple\4.3.0</Pkgruntime_native_System_Security_Cryptography_Apple>
+    <PkgSystem_Security_Cryptography_Algorithms Condition=" '$(PkgSystem_Security_Cryptography_Algorithms)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.cryptography.algorithms\4.3.0</PkgSystem_Security_Cryptography_Algorithms>
+    <PkgSystem_Security_Cryptography_OpenSsl Condition=" '$(PkgSystem_Security_Cryptography_OpenSsl)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.cryptography.openssl\4.3.0</PkgSystem_Security_Cryptography_OpenSsl>
+    <PkgSystem_Security_Cryptography_Csp Condition=" '$(PkgSystem_Security_Cryptography_Csp)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.cryptography.csp\4.3.0</PkgSystem_Security_Cryptography_Csp>
+    <PkgSystem_Security_Cryptography_Cng Condition=" '$(PkgSystem_Security_Cryptography_Cng)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.cryptography.cng\4.3.0</PkgSystem_Security_Cryptography_Cng>
+    <PkgSystem_Globalization_Calendars Condition=" '$(PkgSystem_Globalization_Calendars)' == '' ">C:\Users\rmaxton\.nuget\packages\system.globalization.calendars\4.3.0</PkgSystem_Globalization_Calendars>
+    <Pkgruntime_native_System_Net_Http Condition=" '$(Pkgruntime_native_System_Net_Http)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.native.system.net.http\4.3.0</Pkgruntime_native_System_Net_Http>
+    <Pkgruntime_native_System Condition=" '$(Pkgruntime_native_System)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.native.system\4.3.0</Pkgruntime_native_System>
+    <PkgSystem_Security_Cryptography_X509Certificates Condition=" '$(PkgSystem_Security_Cryptography_X509Certificates)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.cryptography.x509certificates\4.3.0</PkgSystem_Security_Cryptography_X509Certificates>
+    <PkgSystem_Security_Claims Condition=" '$(PkgSystem_Security_Claims)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.claims\4.0.1</PkgSystem_Security_Claims>
+    <PkgSystem_Security_AccessControl Condition=" '$(PkgSystem_Security_AccessControl)' == '' ">C:\Users\rmaxton\.nuget\packages\system.security.accesscontrol\4.5.0</PkgSystem_Security_AccessControl>
+    <PkgSystem_Runtime_Loader Condition=" '$(PkgSystem_Runtime_Loader)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.loader\4.0.0</PkgSystem_Runtime_Loader>
+    <PkgSystem_Runtime_InteropServices_WindowsRuntime Condition=" '$(PkgSystem_Runtime_InteropServices_WindowsRuntime)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.interopservices.windowsruntime\4.3.0</PkgSystem_Runtime_InteropServices_WindowsRuntime>
+    <PkgSystem_Runtime_CompilerServices_Unsafe Condition=" '$(PkgSystem_Runtime_CompilerServices_Unsafe)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.compilerservices.unsafe\4.6.0</PkgSystem_Runtime_CompilerServices_Unsafe>
+    <PkgSystem_Resources_Reader Condition=" '$(PkgSystem_Resources_Reader)' == '' ">C:\Users\rmaxton\.nuget\packages\system.resources.reader\4.0.0</PkgSystem_Resources_Reader>
+    <PkgSystem_Reflection_Metadata Condition=" '$(PkgSystem_Reflection_Metadata)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.metadata\1.6.0</PkgSystem_Reflection_Metadata>
+    <PkgSystem_Reflection_DispatchProxy Condition=" '$(PkgSystem_Reflection_DispatchProxy)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.dispatchproxy\4.0.1</PkgSystem_Reflection_DispatchProxy>
+    <PkgSystem_Reactive Condition=" '$(PkgSystem_Reactive)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reactive\4.1.6</PkgSystem_Reactive>
+    <PkgSystem_Numerics_Vectors Condition=" '$(PkgSystem_Numerics_Vectors)' == '' ">C:\Users\rmaxton\.nuget\packages\system.numerics.vectors\4.4.0</PkgSystem_Numerics_Vectors>
+    <PkgSystem_Net_WebHeaderCollection Condition=" '$(PkgSystem_Net_WebHeaderCollection)' == '' ">C:\Users\rmaxton\.nuget\packages\system.net.webheadercollection\4.0.1</PkgSystem_Net_WebHeaderCollection>
+    <PkgSystem_Net_Primitives Condition=" '$(PkgSystem_Net_Primitives)' == '' ">C:\Users\rmaxton\.nuget\packages\system.net.primitives\4.0.11</PkgSystem_Net_Primitives>
+    <PkgSystem_Globalization_Extensions Condition=" '$(PkgSystem_Globalization_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.globalization.extensions\4.0.1</PkgSystem_Globalization_Extensions>
+    <Pkgruntime_native_System_Security_Cryptography Condition=" '$(Pkgruntime_native_System_Security_Cryptography)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.native.system.security.cryptography\4.0.1</Pkgruntime_native_System_Security_Cryptography>
+    <Pkgruntime_native_System_Net_Security Condition=" '$(Pkgruntime_native_System_Net_Security)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.native.system.net.security\4.0.1</Pkgruntime_native_System_Net_Security>
+    <PkgMicrosoft_Win32_Primitives Condition=" '$(PkgMicrosoft_Win32_Primitives)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.win32.primitives\4.0.1</PkgMicrosoft_Win32_Primitives>
+    <PkgSystem_Net_Security Condition=" '$(PkgSystem_Net_Security)' == '' ">C:\Users\rmaxton\.nuget\packages\system.net.security\4.0.1</PkgSystem_Net_Security>
+    <PkgSystem_Diagnostics_DiagnosticSource Condition=" '$(PkgSystem_Diagnostics_DiagnosticSource)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.diagnosticsource\4.0.0</PkgSystem_Diagnostics_DiagnosticSource>
+    <PkgSystem_Net_Http Condition=" '$(PkgSystem_Net_Http)' == '' ">C:\Users\rmaxton\.nuget\packages\system.net.http\4.1.2</PkgSystem_Net_Http>
+    <PkgSystem_Net_Requests Condition=" '$(PkgSystem_Net_Requests)' == '' ">C:\Users\rmaxton\.nuget\packages\system.net.requests\4.0.11</PkgSystem_Net_Requests>
+    <PkgSystem_Net_NameResolution Condition=" '$(PkgSystem_Net_NameResolution)' == '' ">C:\Users\rmaxton\.nuget\packages\system.net.nameresolution\4.0.0</PkgSystem_Net_NameResolution>
+    <PkgSystem_Memory Condition=" '$(PkgSystem_Memory)' == '' ">C:\Users\rmaxton\.nuget\packages\system.memory\4.5.3</PkgSystem_Memory>
+    <PkgSystem_Linq_Queryable Condition=" '$(PkgSystem_Linq_Queryable)' == '' ">C:\Users\rmaxton\.nuget\packages\system.linq.queryable\4.0.1</PkgSystem_Linq_Queryable>
+    <PkgSystem_Linq_Parallel Condition=" '$(PkgSystem_Linq_Parallel)' == '' ">C:\Users\rmaxton\.nuget\packages\system.linq.parallel\4.0.1</PkgSystem_Linq_Parallel>
+    <PkgSystem_IO_UnmanagedMemoryStream Condition=" '$(PkgSystem_IO_UnmanagedMemoryStream)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io.unmanagedmemorystream\4.0.1</PkgSystem_IO_UnmanagedMemoryStream>
+    <PkgSystem_IO_MemoryMappedFiles Condition=" '$(PkgSystem_IO_MemoryMappedFiles)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io.memorymappedfiles\4.0.0</PkgSystem_IO_MemoryMappedFiles>
+    <PkgSystem_IO_FileSystem_Watcher Condition=" '$(PkgSystem_IO_FileSystem_Watcher)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io.filesystem.watcher\4.0.0</PkgSystem_IO_FileSystem_Watcher>
+    <PkgSystem_Buffers Condition=" '$(PkgSystem_Buffers)' == '' ">C:\Users\rmaxton\.nuget\packages\system.buffers\4.4.0</PkgSystem_Buffers>
+    <Pkgruntime_native_System_IO_Compression Condition=" '$(Pkgruntime_native_System_IO_Compression)' == '' ">C:\Users\rmaxton\.nuget\packages\runtime.native.system.io.compression\4.3.0</Pkgruntime_native_System_IO_Compression>
+    <PkgSystem_IO_Compression Condition=" '$(PkgSystem_IO_Compression)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io.compression\4.3.0</PkgSystem_IO_Compression>
+    <PkgMicrosoft_Win32_SystemEvents Condition=" '$(PkgMicrosoft_Win32_SystemEvents)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.win32.systemevents\4.5.0</PkgMicrosoft_Win32_SystemEvents>
+    <PkgSystem_Drawing_Common Condition=" '$(PkgSystem_Drawing_Common)' == '' ">C:\Users\rmaxton\.nuget\packages\system.drawing.common\4.5.0</PkgSystem_Drawing_Common>
+    <PkgSystem_Diagnostics_TraceSource Condition=" '$(PkgSystem_Diagnostics_TraceSource)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.tracesource\4.0.0</PkgSystem_Diagnostics_TraceSource>
+    <PkgSystem_Diagnostics_StackTrace Condition=" '$(PkgSystem_Diagnostics_StackTrace)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.stacktrace\4.3.0</PkgSystem_Diagnostics_StackTrace>
+    <PkgMicrosoft_Win32_Registry Condition=" '$(PkgMicrosoft_Win32_Registry)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.win32.registry\4.5.0</PkgMicrosoft_Win32_Registry>
+    <PkgSystem_Diagnostics_Process Condition=" '$(PkgSystem_Diagnostics_Process)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.process\4.1.0</PkgSystem_Diagnostics_Process>
+    <PkgSystem_Diagnostics_FileVersionInfo Condition=" '$(PkgSystem_Diagnostics_FileVersionInfo)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.fileversioninfo\4.3.0</PkgSystem_Diagnostics_FileVersionInfo>
+    <PkgSystem_Console Condition=" '$(PkgSystem_Console)' == '' ">C:\Users\rmaxton\.nuget\packages\system.console\4.3.0</PkgSystem_Console>
+    <PkgSystem_ComponentModel_Annotations Condition=" '$(PkgSystem_ComponentModel_Annotations)' == '' ">C:\Users\rmaxton\.nuget\packages\system.componentmodel.annotations\4.5.0</PkgSystem_ComponentModel_Annotations>
+    <PkgSystem_ComponentModel Condition=" '$(PkgSystem_ComponentModel)' == '' ">C:\Users\rmaxton\.nuget\packages\system.componentmodel\4.0.1</PkgSystem_ComponentModel>
+    <PkgSystem_Collections_NonGeneric Condition=" '$(PkgSystem_Collections_NonGeneric)' == '' ">C:\Users\rmaxton\.nuget\packages\system.collections.nongeneric\4.0.1</PkgSystem_Collections_NonGeneric>
+    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\rmaxton\.nuget\packages\system.collections.immutable\1.5.0</PkgSystem_Collections_Immutable>
+    <PkgSystem_AppContext Condition=" '$(PkgSystem_AppContext)' == '' ">C:\Users\rmaxton\.nuget\packages\system.appcontext\4.3.0</PkgSystem_AppContext>
+    <PkgSkiaSharp Condition=" '$(PkgSkiaSharp)' == '' ">C:\Users\rmaxton\.nuget\packages\skiasharp\1.68.0</PkgSkiaSharp>
+    <PkgSharpGen_Runtime Condition=" '$(PkgSharpGen_Runtime)' == '' ">C:\Users\rmaxton\.nuget\packages\sharpgen.runtime\1.2.1</PkgSharpGen_Runtime>
+    <PkgSharpGen_Runtime_COM Condition=" '$(PkgSharpGen_Runtime_COM)' == '' ">C:\Users\rmaxton\.nuget\packages\sharpgen.runtime.com\1.2.0</PkgSharpGen_Runtime_COM>
+    <PkgMicrosoft_VisualBasic Condition=" '$(PkgMicrosoft_VisualBasic)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.visualbasic\10.0.1</PkgMicrosoft_VisualBasic>
+    <PkgMicrosoft_NETCore_Windows_ApiSets Condition=" '$(PkgMicrosoft_NETCore_Windows_ApiSets)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.windows.apisets\1.0.1</PkgMicrosoft_NETCore_Windows_ApiSets>
+    <PkgMicrosoft_NETCore_Jit Condition=" '$(PkgMicrosoft_NETCore_Jit)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.jit\1.0.7</PkgMicrosoft_NETCore_Jit>
+    <PkgMicrosoft_NETCore_Runtime_CoreCLR Condition=" '$(PkgMicrosoft_NETCore_Runtime_CoreCLR)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.runtime.coreclr\1.0.7</PkgMicrosoft_NETCore_Runtime_CoreCLR>
+    <PkgMicrosoft_NETCore_DotNetHost Condition=" '$(PkgMicrosoft_NETCore_DotNetHost)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.dotnethost\1.0.1</PkgMicrosoft_NETCore_DotNetHost>
+    <PkgMicrosoft_NETCore_DotNetHostResolver Condition=" '$(PkgMicrosoft_NETCore_DotNetHostResolver)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.dotnethostresolver\1.0.1</PkgMicrosoft_NETCore_DotNetHostResolver>
+    <PkgMicrosoft_NETCore_DotNetHostPolicy Condition=" '$(PkgMicrosoft_NETCore_DotNetHostPolicy)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.dotnethostpolicy\1.0.5</PkgMicrosoft_NETCore_DotNetHostPolicy>
+    <PkgMicrosoft_CSharp Condition=" '$(PkgMicrosoft_CSharp)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.csharp\4.0.1</PkgMicrosoft_CSharp>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.codeanalysis.analyzers\2.6.1</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_CodeAnalysis_Common Condition=" '$(PkgMicrosoft_CodeAnalysis_Common)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.codeanalysis.common\2.10.0</PkgMicrosoft_CodeAnalysis_Common>
+    <PkgMicrosoft_CodeAnalysis_VisualBasic Condition=" '$(PkgMicrosoft_CodeAnalysis_VisualBasic)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.codeanalysis.visualbasic\1.3.0</PkgMicrosoft_CodeAnalysis_VisualBasic>
+    <PkgMicrosoft_CodeAnalysis_CSharp Condition=" '$(PkgMicrosoft_CodeAnalysis_CSharp)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.codeanalysis.csharp\2.10.0</PkgMicrosoft_CodeAnalysis_CSharp>
+    <PkgLibuv Condition=" '$(PkgLibuv)' == '' ">C:\Users\rmaxton\.nuget\packages\libuv\1.9.1</PkgLibuv>
+    <PkgMicrosoft_NETCore_App Condition=" '$(PkgMicrosoft_NETCore_App)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.app\1.0.5</PkgMicrosoft_NETCore_App>
+    <PkgSharpDX Condition=" '$(PkgSharpDX)' == '' ">C:\Users\rmaxton\.nuget\packages\sharpdx\4.0.1</PkgSharpDX>
+    <PkgSharpDX_DXGI Condition=" '$(PkgSharpDX_DXGI)' == '' ">C:\Users\rmaxton\.nuget\packages\sharpdx.dxgi\4.0.1</PkgSharpDX_DXGI>
+    <PkgSharpDX_Direct3D11 Condition=" '$(PkgSharpDX_Direct3D11)' == '' ">C:\Users\rmaxton\.nuget\packages\sharpdx.direct3d11\4.0.1</PkgSharpDX_Direct3D11>
+    <PkgSharpDX_Direct2D1 Condition=" '$(PkgSharpDX_Direct2D1)' == '' ">C:\Users\rmaxton\.nuget\packages\sharpdx.direct2d1\4.0.1</PkgSharpDX_Direct2D1>
+    <PkgSerilog Condition=" '$(PkgSerilog)' == '' ">C:\Users\rmaxton\.nuget\packages\serilog\2.5.0</PkgSerilog>
+    <PkgSerilog_Sinks_Trace Condition=" '$(PkgSerilog_Sinks_Trace)' == '' ">C:\Users\rmaxton\.nuget\packages\serilog.sinks.trace\2.1.0</PkgSerilog_Sinks_Trace>
+    <PkgSerilog_Sinks_Debug Condition=" '$(PkgSerilog_Sinks_Debug)' == '' ">C:\Users\rmaxton\.nuget\packages\serilog.sinks.debug\1.0.0</PkgSerilog_Sinks_Debug>
+    <PkgJetBrains_Annotations Condition=" '$(PkgJetBrains_Annotations)' == '' ">C:\Users\rmaxton\.nuget\packages\jetbrains.annotations\10.3.0</PkgJetBrains_Annotations>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\rmaxton\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
+    <PkgAvalonia_Skia_Linux_Natives Condition=" '$(PkgAvalonia_Skia_Linux_Natives)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.skia.linux.natives\1.68.0.2</PkgAvalonia_Skia_Linux_Natives>
+    <PkgAvalonia_Remote_Protocol Condition=" '$(PkgAvalonia_Remote_Protocol)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.remote.protocol\0.9.7</PkgAvalonia_Remote_Protocol>
     <PkgAvalonia Condition=" '$(PkgAvalonia)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia\0.9.7</PkgAvalonia>
+    <PkgAvalonia_Skia Condition=" '$(PkgAvalonia_Skia)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.skia\0.9.7</PkgAvalonia_Skia>
+    <PkgAvalonia_FreeDesktop Condition=" '$(PkgAvalonia_FreeDesktop)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.freedesktop\0.9.7</PkgAvalonia_FreeDesktop>
+    <PkgAvalonia_X11 Condition=" '$(PkgAvalonia_X11)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.x11\0.9.7</PkgAvalonia_X11>
+    <PkgAvalonia_Win32 Condition=" '$(PkgAvalonia_Win32)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.win32\0.9.7</PkgAvalonia_Win32>
+    <PkgAvalonia_Native Condition=" '$(PkgAvalonia_Native)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.native\0.9.7</PkgAvalonia_Native>
+    <PkgAvalonia_Direct2D1 Condition=" '$(PkgAvalonia_Direct2D1)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.direct2d1\0.9.7</PkgAvalonia_Direct2D1>
     <PkgAvalonia_Desktop Condition=" '$(PkgAvalonia_Desktop)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.desktop\0.9.7</PkgAvalonia_Desktop>
     <PkgJaggerJo_Avalonia_FuncUI Condition=" '$(PkgJaggerJo_Avalonia_FuncUI)' == '' ">C:\Users\rmaxton\.nuget\packages\jaggerjo.avalonia.funcui\0.4.0</PkgJaggerJo_Avalonia_FuncUI>
+    <PkgElmish Condition=" '$(PkgElmish)' == '' ">C:\Users\rmaxton\.nuget\packages\elmish\3.0.6</PkgElmish>
     <PkgJaggerJo_Avalonia_FuncUI_Elmish Condition=" '$(PkgJaggerJo_Avalonia_FuncUI_Elmish)' == '' ">C:\Users\rmaxton\.nuget\packages\jaggerjo.avalonia.funcui.elmish\0.4.0</PkgJaggerJo_Avalonia_FuncUI_Elmish>
     <PkgJaggerJo_Avalonia_FuncUI_DSL Condition=" '$(PkgJaggerJo_Avalonia_FuncUI_DSL)' == '' ">C:\Users\rmaxton\.nuget\packages\jaggerjo.avalonia.funcui.dsl\0.4.0</PkgJaggerJo_Avalonia_FuncUI_DSL>
   </PropertyGroup>

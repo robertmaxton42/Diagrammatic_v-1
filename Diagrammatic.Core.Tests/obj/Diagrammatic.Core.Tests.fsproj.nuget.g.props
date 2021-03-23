@@ -12,4 +12,61 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)yolodev.expecto.testsdk\0.11.1\build\netcoreapp2.1\YoloDev.Expecto.TestSdk.props" Condition="Exists('$(NuGetPackageRoot)yolodev.expecto.testsdk\0.11.1\build\netcoreapp2.1\YoloDev.Expecto.TestSdk.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.testplatform.testhost\16.9.1\build\netcoreapp2.1\Microsoft.TestPlatform.TestHost.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testplatform.testhost\16.9.1\build\netcoreapp2.1\Microsoft.TestPlatform.TestHost.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.codecoverage\16.9.1\build\netstandard1.0\Microsoft.CodeCoverage.props" Condition="Exists('$(NuGetPackageRoot)microsoft.codecoverage\16.9.1\build\netstandard1.0\Microsoft.CodeCoverage.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.net.test.sdk\16.9.1\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.test.sdk\16.9.1\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\rmaxton\.nuget\packages\system.collections.immutable\1.5.0</PkgSystem_Collections_Immutable>
+    <PkgMono_Cecil Condition=" '$(PkgMono_Cecil)' == '' ">C:\Users\rmaxton\.nuget\packages\mono.cecil\0.11.2</PkgMono_Cecil>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\rmaxton\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
+    <PkgExpecto Condition=" '$(PkgExpecto)' == '' ">C:\Users\rmaxton\.nuget\packages\expecto\9.0.2</PkgExpecto>
+    <PkgYoloDev_Expecto_TestSdk Condition=" '$(PkgYoloDev_Expecto_TestSdk)' == '' ">C:\Users\rmaxton\.nuget\packages\yolodev.expecto.testsdk\0.11.1</PkgYoloDev_Expecto_TestSdk>
+    <PkgSystem_Threading_Tasks_Extensions Condition=" '$(PkgSystem_Threading_Tasks_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.tasks.extensions\4.5.2</PkgSystem_Threading_Tasks_Extensions>
+    <PkgMicrosoft_NETCore_Targets Condition=" '$(PkgMicrosoft_NETCore_Targets)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.targets\1.1.0</PkgMicrosoft_NETCore_Targets>
+    <PkgMicrosoft_NETCore_Platforms Condition=" '$(PkgMicrosoft_NETCore_Platforms)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.netcore.platforms\2.0.0</PkgMicrosoft_NETCore_Platforms>
+    <PkgSystem_Runtime Condition=" '$(PkgSystem_Runtime)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime\4.3.0</PkgSystem_Runtime>
+    <PkgSystem_Threading_Tasks Condition=" '$(PkgSystem_Threading_Tasks)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading.tasks\4.3.0</PkgSystem_Threading_Tasks>
+    <PkgSystem_Text_RegularExpressions Condition=" '$(PkgSystem_Text_RegularExpressions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.text.regularexpressions\4.3.0</PkgSystem_Text_RegularExpressions>
+    <PkgSystem_Text_Encoding Condition=" '$(PkgSystem_Text_Encoding)' == '' ">C:\Users\rmaxton\.nuget\packages\system.text.encoding\4.3.0</PkgSystem_Text_Encoding>
+    <PkgSystem_Text_Encoding_Extensions Condition=" '$(PkgSystem_Text_Encoding_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.text.encoding.extensions\4.3.0</PkgSystem_Text_Encoding_Extensions>
+    <PkgSystem_Runtime_Handles Condition=" '$(PkgSystem_Runtime_Handles)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.handles\4.3.0</PkgSystem_Runtime_Handles>
+    <PkgSystem_Reflection_Primitives Condition=" '$(PkgSystem_Reflection_Primitives)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.primitives\4.3.0</PkgSystem_Reflection_Primitives>
+    <PkgSystem_IO Condition=" '$(PkgSystem_IO)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io\4.3.0</PkgSystem_IO>
+    <PkgSystem_Reflection Condition=" '$(PkgSystem_Reflection)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection\4.3.0</PkgSystem_Reflection>
+    <PkgSystem_Runtime_InteropServices Condition=" '$(PkgSystem_Runtime_InteropServices)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.interopservices\4.3.0</PkgSystem_Runtime_InteropServices>
+    <PkgSystem_Runtime_Extensions Condition=" '$(PkgSystem_Runtime_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.extensions\4.3.0</PkgSystem_Runtime_Extensions>
+    <PkgSystem_Globalization Condition=" '$(PkgSystem_Globalization)' == '' ">C:\Users\rmaxton\.nuget\packages\system.globalization\4.3.0</PkgSystem_Globalization>
+    <PkgSystem_Resources_ResourceManager Condition=" '$(PkgSystem_Resources_ResourceManager)' == '' ">C:\Users\rmaxton\.nuget\packages\system.resources.resourcemanager\4.3.0</PkgSystem_Resources_ResourceManager>
+    <PkgSystem_IO_FileSystem_Primitives Condition=" '$(PkgSystem_IO_FileSystem_Primitives)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io.filesystem.primitives\4.3.0</PkgSystem_IO_FileSystem_Primitives>
+    <PkgSystem_IO_FileSystem Condition=" '$(PkgSystem_IO_FileSystem)' == '' ">C:\Users\rmaxton\.nuget\packages\system.io.filesystem\4.3.0</PkgSystem_IO_FileSystem>
+    <PkgSystem_Diagnostics_Debug Condition=" '$(PkgSystem_Diagnostics_Debug)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.debug\4.3.0</PkgSystem_Diagnostics_Debug>
+    <PkgSystem_Collections Condition=" '$(PkgSystem_Collections)' == '' ">C:\Users\rmaxton\.nuget\packages\system.collections\4.3.0</PkgSystem_Collections>
+    <PkgSystem_Xml_ReaderWriter Condition=" '$(PkgSystem_Xml_ReaderWriter)' == '' ">C:\Users\rmaxton\.nuget\packages\system.xml.readerwriter\4.3.0</PkgSystem_Xml_ReaderWriter>
+    <PkgSystem_Threading Condition=" '$(PkgSystem_Threading)' == '' ">C:\Users\rmaxton\.nuget\packages\system.threading\4.3.0</PkgSystem_Threading>
+    <PkgSystem_Diagnostics_Tools Condition=" '$(PkgSystem_Diagnostics_Tools)' == '' ">C:\Users\rmaxton\.nuget\packages\system.diagnostics.tools\4.3.0</PkgSystem_Diagnostics_Tools>
+    <PkgSystem_Xml_XDocument Condition=" '$(PkgSystem_Xml_XDocument)' == '' ">C:\Users\rmaxton\.nuget\packages\system.xml.xdocument\4.3.0</PkgSystem_Xml_XDocument>
+    <PkgSystem_Runtime_Serialization_Primitives Condition=" '$(PkgSystem_Runtime_Serialization_Primitives)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.serialization.primitives\4.1.1</PkgSystem_Runtime_Serialization_Primitives>
+    <PkgSystem_Runtime_CompilerServices_Unsafe Condition=" '$(PkgSystem_Runtime_CompilerServices_Unsafe)' == '' ">C:\Users\rmaxton\.nuget\packages\system.runtime.compilerservices.unsafe\4.6.0</PkgSystem_Runtime_CompilerServices_Unsafe>
+    <PkgSystem_Reflection_TypeExtensions Condition=" '$(PkgSystem_Reflection_TypeExtensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.typeextensions\4.3.0</PkgSystem_Reflection_TypeExtensions>
+    <PkgSystem_Reflection_Metadata Condition=" '$(PkgSystem_Reflection_Metadata)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.metadata\1.6.0</PkgSystem_Reflection_Metadata>
+    <PkgSystem_Reflection_Extensions Condition=" '$(PkgSystem_Reflection_Extensions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.extensions\4.3.0</PkgSystem_Reflection_Extensions>
+    <PkgSystem_Reflection_Emit_ILGeneration Condition=" '$(PkgSystem_Reflection_Emit_ILGeneration)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.emit.ilgeneration\4.3.0</PkgSystem_Reflection_Emit_ILGeneration>
+    <PkgSystem_Reflection_Emit_Lightweight Condition=" '$(PkgSystem_Reflection_Emit_Lightweight)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.emit.lightweight\4.3.0</PkgSystem_Reflection_Emit_Lightweight>
+    <PkgSystem_Reflection_Emit Condition=" '$(PkgSystem_Reflection_Emit)' == '' ">C:\Users\rmaxton\.nuget\packages\system.reflection.emit\4.3.0</PkgSystem_Reflection_Emit>
+    <PkgSystem_ObjectModel Condition=" '$(PkgSystem_ObjectModel)' == '' ">C:\Users\rmaxton\.nuget\packages\system.objectmodel\4.3.0</PkgSystem_ObjectModel>
+    <PkgSystem_Linq Condition=" '$(PkgSystem_Linq)' == '' ">C:\Users\rmaxton\.nuget\packages\system.linq\4.3.0</PkgSystem_Linq>
+    <PkgSystem_Linq_Expressions Condition=" '$(PkgSystem_Linq_Expressions)' == '' ">C:\Users\rmaxton\.nuget\packages\system.linq.expressions\4.3.0</PkgSystem_Linq_Expressions>
+    <PkgSystem_Dynamic_Runtime Condition=" '$(PkgSystem_Dynamic_Runtime)' == '' ">C:\Users\rmaxton\.nuget\packages\system.dynamic.runtime\4.3.0</PkgSystem_Dynamic_Runtime>
+    <PkgNuGet_Frameworks Condition=" '$(PkgNuGet_Frameworks)' == '' ">C:\Users\rmaxton\.nuget\packages\nuget.frameworks\5.0.0</PkgNuGet_Frameworks>
+    <PkgMicrosoft_CSharp Condition=" '$(PkgMicrosoft_CSharp)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.csharp\4.0.1</PkgMicrosoft_CSharp>
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\rmaxton\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
+    <PkgMicrosoft_TestPlatform_ObjectModel Condition=" '$(PkgMicrosoft_TestPlatform_ObjectModel)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.testplatform.objectmodel\16.9.1</PkgMicrosoft_TestPlatform_ObjectModel>
+    <PkgMicrosoft_TestPlatform_TestHost Condition=" '$(PkgMicrosoft_TestPlatform_TestHost)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.testplatform.testhost\16.9.1</PkgMicrosoft_TestPlatform_TestHost>
+    <PkgMicrosoft_CodeCoverage Condition=" '$(PkgMicrosoft_CodeCoverage)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.codecoverage\16.9.1</PkgMicrosoft_CodeCoverage>
+    <PkgMicrosoft_NET_Test_Sdk Condition=" '$(PkgMicrosoft_NET_Test_Sdk)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.net.test.sdk\16.9.1</PkgMicrosoft_NET_Test_Sdk>
+    <PkgExpecto_VisualStudio_TestAdapter Condition=" '$(PkgExpecto_VisualStudio_TestAdapter)' == '' ">C:\Users\rmaxton\.nuget\packages\expecto.visualstudio.testadapter\10.0.2</PkgExpecto_VisualStudio_TestAdapter>
+  </PropertyGroup>
 </Project>

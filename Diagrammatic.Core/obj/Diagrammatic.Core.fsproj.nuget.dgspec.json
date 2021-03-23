@@ -51,7 +51,7 @@
             },
             "Mono.Cecil": {
               "target": "Package",
-              "version": "[0.11.3, )",
+              "version": "[0.11.2, )",
               "generatePathProperty": true
             },
             "expecto": {

@@ -11,7 +11,7 @@
             <Version>4.7.2</Version>
         </PackageReference>
         <PackageReference Include="Mono.Cecil">
-            <Version>0.11.3</Version>
+            <Version>0.11.2</Version>
         </PackageReference>
         <PackageReference Include="Expecto">
             <Version>9.0.2</Version>

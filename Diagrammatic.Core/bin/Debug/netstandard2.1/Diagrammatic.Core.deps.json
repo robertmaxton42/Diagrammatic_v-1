@@ -11,7 +11,7 @@
         "dependencies": {
           "FSharp.Core": "4.7.2",
           "FSharp.Data": "3.3.3",
-          "Mono.Cecil": "0.11.3",
+          "Mono.Cecil": "0.11.2",
           "Expecto": "9.0.2"
         },
         "runtime": {
@@ -21,7 +21,7 @@
       "Expecto/9.0.2": {
         "dependencies": {
           "FSharp.Core": "4.7.2",
-          "Mono.Cecil": "0.11.3"
+          "Mono.Cecil": "0.11.2"
         },
         "runtime": {
           "lib/netstandard2.0/Expecto.dll": {
@@ -90,23 +90,23 @@
           }
         }
       },
-      "Mono.Cecil/0.11.3": {
+      "Mono.Cecil/0.11.2": {
         "runtime": {
           "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {
-            "assemblyVersion": "0.11.3.0",
-            "fileVersion": "0.11.3.0"
+            "assemblyVersion": "0.11.2.0",
+            "fileVersion": "0.11.2.0"
           },
           "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {
-            "assemblyVersion": "0.11.3.0",
-            "fileVersion": "0.11.3.0"
+            "assemblyVersion": "0.11.2.0",
+            "fileVersion": "0.11.2.0"
           },
           "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {
-            "assemblyVersion": "0.11.3.0",
-            "fileVersion": "0.11.3.0"
+            "assemblyVersion": "0.11.2.0",
+            "fileVersion": "0.11.2.0"
           },
           "lib/netstandard2.0/Mono.Cecil.dll": {
-            "assemblyVersion": "0.11.3.0",
-            "fileVersion": "0.11.3.0"
+            "assemblyVersion": "0.11.2.0",
+            "fileVersion": "0.11.2.0"
           }
         }
       }
@@ -139,12 +139,12 @@
       "path": "fsharp.data/3.3.3",
       "hashPath": "fsharp.data.3.3.3.nupkg.sha512"
     },
-    "Mono.Cecil/0.11.3": {
+    "Mono.Cecil/0.11.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DNYE+io5XfEE8+E+5padThTPHJARJHbz1mhbhMPNrrWGKVKKqj/KEeLvbawAmbIcT73NuxLV7itHZaYCZcVWGg==",
-      "path": "mono.cecil/0.11.3",
-      "hashPath": "mono.cecil.0.11.3.nupkg.sha512"
+      "sha512": "sha512-hZNAnXKQsOs/SZMFtT/e82/nA/iLgkeDy+sHD8xix4f0m9/3G0RNZplE1QHB+0n8QXq54jLqR/IPgVOkLapkyg==",
+      "path": "mono.cecil/0.11.2",
+      "hashPath": "mono.cecil.0.11.2.nupkg.sha512"
     }
   }
 }

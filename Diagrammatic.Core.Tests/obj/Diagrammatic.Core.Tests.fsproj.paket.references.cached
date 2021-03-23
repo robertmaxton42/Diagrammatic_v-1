@@ -1,0 +1,4 @@
+expecto
+YoloDev.Expecto.TestSdk
+Microsoft.NET.Test.Sdk
+Expecto.VisualStudio.TestAdapter

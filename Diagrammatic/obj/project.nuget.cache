@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0yf0aITS/iyGrrrZb+AbDx5uzvSJxE0RRzN12Xmf7LP4mY7NQZhG/0YNAUjiElQSdNrsVrHTgxFoFLqCuWOfuA==",
+  "dgSpecHash": "rj2k5BsuO9m7STK9iKDluT2dkQICERu3PXOBUvofrLUwkvf64OwRIHaUy2JWuPkcoOxzGG/FfUXKvb4/7PlDHw==",
   "success": true,
   "projectFilePath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic\\Diagrammatic.fsproj",
   "expectedPackageFiles": [
@@ -15,7 +15,8 @@
     "C:\\Users\\rmaxton\\.nuget\\packages\\avalonia.win32\\0.9.7\\avalonia.win32.0.9.7.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\avalonia.x11\\0.9.7\\avalonia.x11.0.9.7.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\elmish\\3.0.6\\elmish.3.0.6.nupkg.sha512",
-    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.core\\4.7.1\\fsharp.core.4.7.1.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\expecto\\9.0.2\\expecto.9.0.2.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.data\\3.3.3\\fsharp.data.3.3.3.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\jaggerjo.avalonia.funcui\\0.4.0\\jaggerjo.avalonia.funcui.0.4.0.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\jaggerjo.avalonia.funcui.dsl\\0.4.0\\jaggerjo.avalonia.funcui.dsl.0.4.0.nupkg.sha512",
@@ -40,6 +41,7 @@
     "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.win32.registry\\4.0.0\\microsoft.win32.registry.4.0.0.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\mono.cecil\\0.11.3\\mono.cecil.0.11.3.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

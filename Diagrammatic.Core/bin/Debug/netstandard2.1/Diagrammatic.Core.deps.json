@@ -1,0 +1,150 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Diagrammatic.Core/1.0.0": {
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "FSharp.Data": "3.3.3",
+          "Mono.Cecil": "0.11.3",
+          "Expecto": "9.0.2"
+        },
+        "runtime": {
+          "Diagrammatic.Core.dll": {}
+        }
+      },
+      "Expecto/9.0.2": {
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Mono.Cecil": "0.11.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Expecto.dll": {
+            "assemblyVersion": "9.0.2.0",
+            "fileVersion": "9.0.2.0"
+          }
+        }
+      },
+      "FSharp.Core/4.7.2": {
+        "runtime": {
+          "lib/netstandard2.0/FSharp.Core.dll": {
+            "assemblyVersion": "4.7.0.0",
+            "fileVersion": "4.700.20.27008"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/cs/FSharp.Core.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.0/de/FSharp.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/es/FSharp.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.0/fr/FSharp.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/it/FSharp.Core.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.0/ja/FSharp.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.0/ko/FSharp.Core.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.0/pl/FSharp.Core.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.0/ru/FSharp.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.0/tr/FSharp.Core.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "FSharp.Data/3.3.3": {
+        "dependencies": {
+          "FSharp.Core": "4.7.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FSharp.Data.dll": {
+            "assemblyVersion": "3.3.3.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Mono.Cecil/0.11.3": {
+        "runtime": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {
+            "assemblyVersion": "0.11.3.0",
+            "fileVersion": "0.11.3.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {
+            "assemblyVersion": "0.11.3.0",
+            "fileVersion": "0.11.3.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {
+            "assemblyVersion": "0.11.3.0",
+            "fileVersion": "0.11.3.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.dll": {
+            "assemblyVersion": "0.11.3.0",
+            "fileVersion": "0.11.3.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Diagrammatic.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Expecto/9.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R7sffs4u7VDVv35eVXPE9nnP8+6ufG45+rWQldWFqDzfK/+3UBPpHrUA0tI4yj6R6qYwbJCU98fJCZKUTaZkew==",
+      "path": "expecto/9.0.2",
+      "hashPath": "expecto.9.0.2.nupkg.sha512"
+    },
+    "FSharp.Core/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w3XFVTnyZUbC8e2QT6a85ern6y7eQPPk+MYemz1FP0iBfgZcembL+wmo5cIZ1kxB8jfoXC8Q9KVkOMsGpkBKbA==",
+      "path": "fsharp.core/4.7.2",
+      "hashPath": "fsharp.core.4.7.2.nupkg.sha512"
+    },
+    "FSharp.Data/3.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O+fV9oPNktESFngvTzPIQUhTdQGNX0XYXToL1l7+3jE46Y7tp8Ux4FkTMzj8wa8QV07l4sY4pJ7bBppGDi3Lsw==",
+      "path": "fsharp.data/3.3.3",
+      "hashPath": "fsharp.data.3.3.3.nupkg.sha512"
+    },
+    "Mono.Cecil/0.11.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DNYE+io5XfEE8+E+5padThTPHJARJHbz1mhbhMPNrrWGKVKKqj/KEeLvbawAmbIcT73NuxLV7itHZaYCZcVWGg==",
+      "path": "mono.cecil/0.11.3",
+      "hashPath": "mono.cecil.0.11.3.nupkg.sha512"
+    }
+  }
+}

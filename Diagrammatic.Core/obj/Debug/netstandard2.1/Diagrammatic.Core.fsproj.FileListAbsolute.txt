@@ -1,0 +1,8 @@
+C:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic.Core\bin\Debug\netstandard2.1\Diagrammatic.Core.deps.json
+C:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic.Core\bin\Debug\netstandard2.1\Diagrammatic.Core.dll
+C:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic.Core\bin\Debug\netstandard2.1\Diagrammatic.Core.pdb
+C:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic.Core\obj\Debug\netstandard2.1\Diagrammatic.Core.fsprojAssemblyReference.cache
+C:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic.Core\obj\Debug\netstandard2.1\Diagrammatic.Core.AssemblyInfoInputs.cache
+C:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic.Core\obj\Debug\netstandard2.1\Diagrammatic.Core.AssemblyInfo.fs
+C:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic.Core\obj\Debug\netstandard2.1\Diagrammatic.Core.dll
+C:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic.Core\obj\Debug\netstandard2.1\Diagrammatic.Core.pdb

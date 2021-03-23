@@ -13,7 +13,9 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\rmaxton\.nuget\packages\fsharp.core\4.7.1</PkgFSharp_Core>
+    <PkgMono_Cecil Condition=" '$(PkgMono_Cecil)' == '' ">C:\Users\rmaxton\.nuget\packages\mono.cecil\0.11.3</PkgMono_Cecil>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\rmaxton\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
     <PkgFSharp_Data Condition=" '$(PkgFSharp_Data)' == '' ">C:\Users\rmaxton\.nuget\packages\fsharp.data\3.3.3</PkgFSharp_Data>
+    <PkgExpecto Condition=" '$(PkgExpecto)' == '' ">C:\Users\rmaxton\.nuget\packages\expecto\9.0.2</PkgExpecto>
   </PropertyGroup>
 </Project>

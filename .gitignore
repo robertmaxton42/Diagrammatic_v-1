@@ -1,0 +1,6 @@
+#Paket dependency manager
+.paket/
+paket-files/
+
+.fake
+.ionide

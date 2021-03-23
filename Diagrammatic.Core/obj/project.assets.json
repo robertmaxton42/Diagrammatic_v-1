@@ -2,7 +2,20 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.1": {
-      "FSharp.Core/4.7.1": {
+      "Expecto/9.0.2": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.6.0",
+          "Mono.Cecil": "0.11.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Expecto.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Expecto.dll": {}
+        }
+      },
+      "FSharp.Core/4.7.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/FSharp.Core.dll": {}
@@ -63,19 +76,53 @@
         "runtime": {
           "lib/netstandard2.0/FSharp.Data.dll": {}
         }
+      },
+      "Mono.Cecil/0.11.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "FSharp.Core/4.7.1": {
-      "sha512": "cQ4Dn5mFIWnJF8MmL49k2V6L8mtInDrXopskNFbpC4lsPdspTn7WzUQLylB4HU4tpi76ManXMVCAvtlYowTfHQ==",
+    "Expecto/9.0.2": {
+      "sha512": "R7sffs4u7VDVv35eVXPE9nnP8+6ufG45+rWQldWFqDzfK/+3UBPpHrUA0tI4yj6R6qYwbJCU98fJCZKUTaZkew==",
       "type": "package",
-      "path": "fsharp.core/4.7.1",
+      "path": "expecto/9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "expecto-logo-small.png",
+        "expecto.9.0.2.nupkg.sha512",
+        "expecto.nuspec",
+        "lib/net461/Expecto.dll",
+        "lib/net461/Expecto.pdb",
+        "lib/net461/Expecto.xml",
+        "lib/netstandard2.0/Expecto.dll",
+        "lib/netstandard2.0/Expecto.pdb",
+        "lib/netstandard2.0/Expecto.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "FSharp.Core/4.7.2": {
+      "sha512": "w3XFVTnyZUbC8e2QT6a85ern6y7eQPPk+MYemz1FP0iBfgZcembL+wmo5cIZ1kxB8jfoXC8Q9KVkOMsGpkBKbA==",
+      "type": "package",
+      "path": "fsharp.core/4.7.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.4.7.1.nupkg.sha512",
+        "fsharp.core.4.7.2.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/net45/FSharp.Core.dll",
         "lib/net45/FSharp.Core.optdata",
@@ -110,7 +157,8 @@
         "lib/netstandard2.0/ru/FSharp.Core.resources.dll",
         "lib/netstandard2.0/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll"
+        "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll",
+        "paket-installmodel.cache"
       ]
     },
     "FSharp.Data/3.3.3": {
@@ -140,12 +188,42 @@
         "typeproviders/fsharp41/netstandard2.0/FSharp.Data.DesignTime.dll",
         "typeproviders/fsharp41/netstandard2.0/FSharp.Data.DesignTime.pdb"
       ]
+    },
+    "Mono.Cecil/0.11.3": {
+      "sha512": "DNYE+io5XfEE8+E+5padThTPHJARJHbz1mhbhMPNrrWGKVKKqj/KEeLvbawAmbIcT73NuxLV7itHZaYCZcVWGg==",
+      "type": "package",
+      "path": "mono.cecil/0.11.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Mono.Cecil.Mdb.dll",
+        "lib/net40/Mono.Cecil.Mdb.pdb",
+        "lib/net40/Mono.Cecil.Pdb.dll",
+        "lib/net40/Mono.Cecil.Pdb.pdb",
+        "lib/net40/Mono.Cecil.Rocks.dll",
+        "lib/net40/Mono.Cecil.Rocks.pdb",
+        "lib/net40/Mono.Cecil.dll",
+        "lib/net40/Mono.Cecil.pdb",
+        "lib/netstandard2.0/Mono.Cecil.Mdb.dll",
+        "lib/netstandard2.0/Mono.Cecil.Mdb.pdb",
+        "lib/netstandard2.0/Mono.Cecil.Pdb.dll",
+        "lib/netstandard2.0/Mono.Cecil.Pdb.pdb",
+        "lib/netstandard2.0/Mono.Cecil.Rocks.dll",
+        "lib/netstandard2.0/Mono.Cecil.Rocks.pdb",
+        "lib/netstandard2.0/Mono.Cecil.dll",
+        "lib/netstandard2.0/Mono.Cecil.pdb",
+        "mono.cecil.0.11.3.nupkg.sha512",
+        "mono.cecil.nuspec",
+        "paket-installmodel.cache"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "FSharp.Core >= 4.7.1",
-      "FSharp.Data >= 3.3.3"
+      "FSharp.Core >= 4.7.2",
+      "FSharp.Data >= 3.3.3",
+      "Mono.Cecil >= 0.11.3",
+      "expecto >= 9.0.2"
     ]
   },
   "packageFolders": {
@@ -154,11 +232,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
+      "projectUniqueName": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
       "projectName": "Diagrammatic.Core",
-      "projectPath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
+      "projectPath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
       "packagesPath": "C:\\Users\\rmaxton\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\obj\\",
+      "outputPath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rmaxton\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -173,6 +251,14 @@
         "netstandard2.1": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "noWarn": [
+          "NU1603",
+          "NU1604",
+          "NU1605",
+          "NU1608"
+        ]
       }
     },
     "frameworks": {
@@ -180,12 +266,22 @@
         "dependencies": {
           "FSharp.Core": {
             "target": "Package",
-            "version": "[4.7.1, )",
+            "version": "[4.7.2, )",
             "generatePathProperty": true
           },
           "FSharp.Data": {
             "target": "Package",
             "version": "[3.3.3, )",
+            "generatePathProperty": true
+          },
+          "Mono.Cecil": {
+            "target": "Package",
+            "version": "[0.11.3, )",
+            "generatePathProperty": true
+          },
+          "expecto": {
+            "target": "Package",
+            "version": "[9.0.2, )",
             "generatePathProperty": true
           }
         },

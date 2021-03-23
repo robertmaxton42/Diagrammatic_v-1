@@ -17,7 +17,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\rmaxton\.nuget\packages\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\rmaxton\.nuget\packages\fsharp.core\4.7.1</PkgFSharp_Core>
     <PkgAvalonia Condition=" '$(PkgAvalonia)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia\0.9.7</PkgAvalonia>
     <PkgAvalonia_Desktop Condition=" '$(PkgAvalonia_Desktop)' == '' ">C:\Users\rmaxton\.nuget\packages\avalonia.desktop\0.9.7</PkgAvalonia_Desktop>
     <PkgJaggerJo_Avalonia_FuncUI Condition=" '$(PkgJaggerJo_Avalonia_FuncUI)' == '' ">C:\Users\rmaxton\.nuget\packages\jaggerjo.avalonia.funcui\0.4.0</PkgJaggerJo_Avalonia_FuncUI>

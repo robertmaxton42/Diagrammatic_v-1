@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Lx/9dlrMqIkE7J559f1+vMx+K+dohufGpcpqWo5pt1LCkCow0XXAhpyrh+sE7vREdis2TPqyVh2BYucBT9BfKA==",
+  "dgSpecHash": "VUHPqWmvF6BTPc1f44XvA2X+NLTzAJDBg2x5TrmMb93h+EBjorbGpn+weUEGYLX4Ov8zGQ13vkfFaOLeGJEaRw==",
   "success": true,
   "projectFilePath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.core\\4.7.1\\fsharp.core.4.7.1.nupkg.sha512",
-    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.data\\3.3.3\\fsharp.data.3.3.3.nupkg.sha512"
+    "C:\\Users\\rmaxton\\.nuget\\packages\\expecto\\9.0.2\\expecto.9.0.2.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.data\\3.3.3\\fsharp.data.3.3.3.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\mono.cecil\\0.11.3\\mono.cecil.0.11.3.nupkg.sha512"
   ],
   "logs": []
 }

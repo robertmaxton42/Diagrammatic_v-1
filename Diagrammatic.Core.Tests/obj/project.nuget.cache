@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "FuHul09jyB990BPb6q0JUMdzoxDa9mKY7hmiuPYkaYha8Hu4aI8E520sKTQvY6h4nzKEEsCR8H4eKoEyhTMUTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rmaxton\\.nuget\\packages\\expecto\\9.0.2\\expecto.9.0.2.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.data\\3.3.3\\fsharp.data.3.3.3.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\mono.cecil\\0.11.3\\mono.cecil.0.11.3.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

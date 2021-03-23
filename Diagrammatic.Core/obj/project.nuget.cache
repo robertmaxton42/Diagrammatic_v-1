@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Lx/9dlrMqIkE7J559f1+vMx+K+dohufGpcpqWo5pt1LCkCow0XXAhpyrh+sE7vREdis2TPqyVh2BYucBT9BfKA==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.core\\4.7.1\\fsharp.core.4.7.1.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.data\\3.3.3\\fsharp.data.3.3.3.nupkg.sha512"
+  ],
+  "logs": []
+}

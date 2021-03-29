@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zwSk/kOQpdPDhWK98sJNnqie2ZE3YbzYi3LscpFOJ0dVvaa0VeOsR/sgvKi4Rc8unY2YJfA7XXIps+uUZHrgbg==",
+  "dgSpecHash": "gjxIT3e1YvmGnf9O5/mgmKqHWBgYthCBw0OSjsGCD28lF4pxmuZPI4/7toIQLbMFJ702Xta1Eh825HkXV88EPQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic\\Diagrammatic.fsproj",
+  "projectFilePath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic\\Diagrammatic.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\rmaxton\\.nuget\\packages\\avalonia\\0.9.7\\avalonia.0.9.7.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\avalonia.desktop\\0.9.7\\avalonia.desktop.0.9.7.nupkg.sha512",

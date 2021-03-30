@@ -7,10 +7,8 @@ framework: netcoreapp3.1, netstandard2.0, netstandard2.1
 
 nuget FSharp.Core ~> 4
 
-#git https://github.com/palladin/Higher.git master build: "build.cmd Nuget", OS: windows
-#nuget Higher
-
-github palladin/Higher src/Higher/Higher.fsproj
+git https://github.com/palladin/Higher.git master build: "build.cmd BuildPackage", Packages: /bin/, OS: windows
+nuget Higher
 
 nuget Avalonia.Desktop == 0.9.7
 nuget Avalonia.Win32 == 0.9.7

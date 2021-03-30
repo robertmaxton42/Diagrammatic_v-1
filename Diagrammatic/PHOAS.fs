@@ -1,4 +1,5 @@
 namespace Diagrammatic
+open Higher
 
 module PHOGraph
 

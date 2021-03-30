@@ -5,10 +5,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="..\paket-files\palladin\Higher\src\Higher\Higher.fsproj">
-      <Paket>True</Paket>
-      <Link>paket-files/Higher.fsproj</Link>
-    </Content>
     <Compile Include="PHOAS.fs" />
     <Compile Include="DiagramGraph.fs" />
     <Compile Include="UserProfiles.fs" />

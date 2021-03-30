@@ -293,6 +293,18 @@
           "lib/netstandard2.0/FSharp.Data.dll": {}
         }
       },
+      "Higher/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "0.0.0"
+        },
+        "compile": {
+          "lib/net40/Higher.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Higher.dll": {}
+        }
+      },
       "JaggerJo.Avalonia.FuncUI/0.4.0": {
         "type": "package",
         "dependencies": {
@@ -3405,6 +3417,19 @@
         "typeproviders/fsharp41/net45/FSharp.Data.DesignTime.pdb",
         "typeproviders/fsharp41/netstandard2.0/FSharp.Data.DesignTime.dll",
         "typeproviders/fsharp41/netstandard2.0/FSharp.Data.DesignTime.pdb"
+      ]
+    },
+    "Higher/1.0.0": {
+      "sha512": "9pC4jTnwphlvDfhFTR37NDIMWlVYMkopaYp1ts2XxIrwTU8MUY2Tq9QlvQa9fd4dhGe4xuMC9ko9u0/Mug4cOA==",
+      "type": "package",
+      "path": "higher/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "higher.1.0.0.nupkg.sha512",
+        "higher.nuspec",
+        "lib/net40/Higher.dll",
+        "lib/net40/Higher.xml",
+        "paket-installmodel.cache"
       ]
     },
     "JaggerJo.Avalonia.FuncUI/0.4.0": {
@@ -9363,6 +9388,7 @@
       "Diagrammatic.Core >= 1.0.0",
       "Elmish >= 3.0.6",
       "FSharp.Core >= 4.7.2",
+      "Higher >= 1.0.0",
       "JaggerJo.Avalonia.FuncUI >= 0.4.0",
       "JaggerJo.Avalonia.FuncUI.DSL >= 0.4.0",
       "JaggerJo.Avalonia.FuncUI.Elmish >= 0.4.0",
@@ -9531,6 +9557,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj": {
               "projectPath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj"
@@ -9549,6 +9576,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Avalonia": {
             "target": "Package",
@@ -9608,6 +9636,11 @@
           "FSharp.Core": {
             "target": "Package",
             "version": "[4.7.2, )",
+            "generatePathProperty": true
+          },
+          "Higher": {
+            "target": "Package",
+            "version": "[1.0.0, )",
             "generatePathProperty": true
           },
           "JaggerJo.Avalonia.FuncUI": {
@@ -10341,8 +10374,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Higher 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Higher",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 Avalonia.Remote.Protocol,0.9.7,Transitive,Main,false,true
 FSharp.Core,4.7.2,Transitive,Main,false,true
 Elmish,3.0.6,Transitive,Main,false,true
+Higher,1.0,Direct,Main,false,true
 Microsoft.CodeAnalysis.Analyzers,2.6.1,Transitive,Main,false,true
 Microsoft.NETCore.DotNetHost,1.0.1,Transitive,Main,false,true
 Microsoft.NETCore.DotNetHostResolver,1.0.1,Transitive,Main,false,true
@@ -149,7 +150,7 @@ Avalonia.Direct2D1,0.9.7,Transitive,Main,false,true
 Tmds.DBus,0.7,Transitive,Main,false,true
 Avalonia.FreeDesktop,0.9.7,Transitive,Main,false,true
 Avalonia.X11,0.9.7,Transitive,Main,false,true
-Avalonia.Desktop,0.9.7,Transitive,Main,false,true
+Avalonia.Desktop,0.9.7,Direct,Main,false,true
 JaggerJo.Avalonia.FuncUI,0.4,Transitive,Main,false,true
 JaggerJo.Avalonia.FuncUI.DSL,0.4,Direct,Main,false,true
 JaggerJo.Avalonia.FuncUI.Elmish,0.4,Direct,Main,false,true

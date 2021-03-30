@@ -1100,6 +1100,12 @@ NUGET
       Expecto (>= 9.0 < 10.0) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp2.1)) (&& (== netstandard2.1) (>= netcoreapp2.1))
       FSharp.Core (>= 4.6) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp2.1)) (&& (== netstandard2.1) (>= netcoreapp2.1))
       System.Collections.Immutable (>= 1.5 < 5.1) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp2.1)) (&& (== netstandard2.1) (>= netcoreapp2.1))
-GITHUB
-  remote: palladin/Higher
-    src/Higher/Higher.fsproj (21bc8a0091a4e2989a856d6bd843527c045807b8)
+  remote: paket-files/github.com/palladin/Higher/bin
+    Higher (1.0)
+      FSharp.Core
+GIT
+  remote: https://github.com/palladin/Higher.git
+     (21bc8a0091a4e2989a856d6bd843527c045807b8)
+      build: build.cmd BuildPackage
+      path: /bin/
+      os: windows

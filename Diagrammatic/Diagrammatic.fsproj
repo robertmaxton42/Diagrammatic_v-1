@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Newtype.fs" />
+    <Compile Include="Brand.fs" />
     <Compile Include="PHOAS.fs" />
     <Compile Include="DiagramGraph.fs" />
     <Compile Include="UserProfiles.fs" />

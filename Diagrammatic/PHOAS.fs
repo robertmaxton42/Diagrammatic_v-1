@@ -1,5 +1,6 @@
 namespace Diagrammatic
 open Higher
+open Lazy
 
 module PHOGraph =
 
@@ -13,8 +14,13 @@ module PHOGraph =
   type Abstract = class end
   type GraphRec<'F, 'a> = 
     //private
-    | Var of 'a
-    | Mu of (Lazy<'a seq> -> App<'F, GraphRec<'F, 'a>> seq)
+    //Cross- or back-link to previously defined node
+    | Ref of 'a 
+    // Defines a map of tree roots to trees
+    // First element is 'this node' by convention; folds other than gfold
+    // are written with that assumption
+    | Mu of ('a seq -> App<'F, GraphRec<'F, 'a>> seq) 
+    //Recursive graph structure
     | In of App<'F, GraphRec<'F, 'a>>
 
   type Graph<'F> = 
@@ -27,32 +33,33 @@ module PHOGraph =
 
     //let private force (x: Lazy<'a>) = x.Value
 
-    let rec private fixVal (v: 'a when 'a : equality) f = 
-      let v' = f (Lazy.CreateFromValue v)
+    let rec private fixVal v f = 
+      let v' = f (lazy v)
       if v = v' then v else fixVal v' f
 
-
-    let gfold (link: 't -> 'c) (fixreduce: (Lazy<'t seq> -> 'c seq) -> 'c) (ev: #Functor<'F>) (freduce: App<'F, 'c> -> 'c) = 
-      let rec trans graph = 
+    let gfold (maplink: 't -> 'c) (fixreduce: (Lazy<'t seq> -> 'c seq) -> 'c) (ev: #Functor<'F>) (freduce: Lazy<App<'F, 'c>> -> 'c) = 
+      let rec transform graph = 
         match graph with
-        | Var x -> link x
-        // The argument to fixreduce should be able to take an infinite series of constants
-        // and take only as many as it needs (only as many as there are actual branches
-        // from the current node)
-        | Mu cycle -> fixreduce (Seq.map (freduce << ev.Map trans) << cycle)
-        | In subg -> freduce (ev.Map trans subg)
-      trans
+        | Ref x -> maplink x
+        //Theory: The unconditional force is okay because there's an implicit lazy wrapper in <|<
+        | Mu cycle -> fixreduce (Seq.map (freduce <|< ev.Map transform) << cycle << force)
+        //| Mu cycle -> fixreduce (fun (heads: Lazy<'t seq>) -> force (lazyz {
+        //              let! hs = heads
+        //              let branches = cycle hs
+        //              let fmapreduce = freduce <|< ev.Map transform
+        //              Seq.map fmapreduce branches
+        //            }))  
+        | In subg -> (freduce <|< ev.Map transform) subg
+      transform
 
     let fold (ev: #Functor<'F>) (freduce: App<'F, 'c> -> 'c) (k: 'c) =
-      gfold id (fun g -> (Seq.head << g) (lazy Seq.initInfinite (fun _ -> k))) ev freduce
+      gfold id (fun g -> (Seq.head << g) (lazy Seq.initInfinite (fun _ -> k))) ev (freduce << force)
 
-    let cfold (ev: #Functor<'F>) (freduce: App<'F, 't> -> 't)=
+    let cfold (ev: #Functor<'F>) (freduce: Lazy<App<'F, 't>> -> 't)=
       gfold id (Seq.head << fix) ev freduce
 
-    let sfold (ev: #Functor<'F>) (freduce: App<'F, 't> -> 't) (k: 't) =
+    let sfold (ev: #Functor<'F>) (freduce: Lazy<App<'F, 't>> -> 't) (k: 't) =
       gfold id (Seq.head << (fixVal (Seq.initInfinite (fun _ -> k)))) ev freduce
-
-    //let pjoin (ev: #Functor<'F>) 
 
 module PHOTypes =
   type StreamBase<'a, 'r> = Cons of hd: 'a * tl: 'r    
@@ -65,22 +72,25 @@ module PHOTypes =
     static member Prj (app : App2<StreamBase, 'A, 'R>) : StreamBase<'A, 'R> =
       app.Apply(AppToken<StreamBase, 'A>.Token(token)) :?> _
 
+  let (|StreamCons|) stream = 
+    let (Cons (hd, tl)) = StreamBase.Prj stream
+    (hd, tl)
+
   type StreamBaseFunctor<'a> () =
     inherit Functor<App<StreamBase,'a>>()
-    override self.Map<'A, 'B> (f: 'A -> 'B) stream=
-      let (Cons (hd, tl)) = StreamBase.Prj stream
-      Cons (hd, f tl) |> StreamBase.Inj
+    override self.Map<'A, 'B> (f: 'A -> 'B) stream =
+      match stream with
+      | StreamCons (hd, tl) -> (Cons (hd, f tl)) |> StreamBase.Inj
+    
 
   type Stream<'a> = PHOGraph.Graph<App<StreamBase, 'a>>
 
   module Stream =
-    let streamf2list stream = 
-      let (Cons (hd, tl)) = StreamBase.Prj stream
-      hd :: tl
+    let streamf2list = function 
+      | StreamCons (hd, tl) -> hd :: tl
 
-    let streamf2seq stream =
-      let (Cons (hd, tl)) = StreamBase.Prj stream
-      seq { yield hd; yield! tl }
+    let streamf2seq = function
+      | StreamCons (hd, tl) -> seq { yield hd; yield! tl }
 
     let elems<'a> =
       PHOGraph.Graph.fold (new StreamBaseFunctor<'a>()) streamf2list []
@@ -88,5 +98,14 @@ module PHOTypes =
     let linearize<'a> =
       PHOGraph.Graph.cfold (new StreamBaseFunctor<'a>()) streamf2seq
   
-  let onetwo = PHOGraph.Mu (fun branches -> seq {StreamBase.Inj <| Cons (1, PHOGraph.In (StreamBase.Inj <| Cons (2, (PHOGraph.Var (Seq.head << branches)))))} )
+  let lazyhead (s: Lazy<#seq<_>>) = Seq.head |<< s
+  let lazyhead s = Seq.head |<< s
+  let test s = Cons (2, PHOGraph.Ref (Seq.head |<< s))
+
+  let onetwo = PHOGraph.Mu (fun branches -> 
+    seq {
+        Cons (1, PHOGraph.In ( StreamBase.Inj <| 
+          Cons (2, (PHOGraph.Ref (Seq.head << branches)))
+        )) |> StreamBase.Inj
+    } )
 

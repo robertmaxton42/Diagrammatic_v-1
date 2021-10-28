@@ -3,25 +3,27 @@ strategy: min
 source https://api.nuget.org/v3/index.json
 
 storage: none
-framework: netcoreapp3.1, netstandard2.0, netstandard2.1
+framework: net5.0
 
 nuget FSharp.Core ~> 4
 
 git https://github.com/palladin/Higher.git master build: "build.cmd BuildPackage", Packages: /bin/, OS: windows
 nuget Higher
 
-nuget Avalonia.Desktop == 0.9.7
-nuget Avalonia.Win32 == 0.9.7
-nuget Elmish == 3.0.6
-nuget JaggerJo.Avalonia.FuncUI == 0.4.0
-nuget JaggerJo.Avalonia.FuncUI.DSL == 0.4.0
-nuget JaggerJo.Avalonia.FuncUI.Elmish == 0.4.0
+nuget Avalonia.Desktop
+nuget Avalonia.Win32
+nuget Elmish
+nuget JaggerJo.Avalonia.FuncUI
+nuget JaggerJo.Avalonia.FuncUI.DSL
+nuget JaggerJo.Avalonia.FuncUI.Elmish
 
-nuget Expecto
 nuget Expecto.BenchmarkDotNet
 nuget Expecto.FsCheck
 nuget Expecto.Hopac
 
-nuget YoloDev.Expecto.TestSdk ~> 0
-nuget Microsoft.NET.Test.Sdk ~. 16
-nuget Expecto.VisualStudio.TestAdapter == 10.0.2
+nuget YoloDev.Expecto.TestSdk
+nuget Microsoft.NET.Test.Sdk
+nuget Expecto.VisualStudio.TestAdapter
+
+nuget System.Reflection.Emit ~> 4.7
+nuget System.Runtime ~> 4.3.1

@@ -7,8 +7,8 @@ framework: net5.0
 
 nuget FSharp.Core ~> 4
 
-git https://github.com/palladin/Higher.git master build: "build.cmd BuildPackage", Packages: /bin/, OS: windows
-nuget Higher
+//git https://github.com/palladin/Higher.git master build: "build.cmd BuildPackage", Packages: /bin/, OS: windows
+//nuget Higher
 
 nuget Avalonia.Desktop
 nuget Avalonia.Win32

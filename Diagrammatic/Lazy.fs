@@ -59,3 +59,4 @@ module Lazy
   let (|<<) f (Lazy(x)) = lazy f x  
   let (<<|) f x = f (lazy x)
   let (<|<) lazyf f = fun x -> lazyf (lazy f x)
+  let (<<=) (f: 'a -> Lazy<'b>) x = lazy (force << f <| force x)

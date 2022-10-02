@@ -127,3 +127,4 @@ c:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic\bin\Debug\netcoreapp
 c:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic\bin\Debug\netcoreapp3.1\runtimes\tizen-x86\native\libSkiaSharp.so
 c:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
 c:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
+c:\Users\rmaxton\Documents\Coding\Diagrammatic\Diagrammatic\obj\Debug\netcoreapp3.1\Diagrammatic.fsproj.AssemblyReference.cache

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj": {}
+    "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj": {
+    "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj",
+        "projectUniqueName": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj",
         "projectName": "Diagrammatic.Core.Tests",
-        "projectPath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj",
+        "projectPath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj",
         "packagesPath": "C:\\Users\\rmaxton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\obj\\",
+        "outputPath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rmaxton\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj": {
-                "projectPath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj"
+              "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj": {
+                "projectPath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj"
               }
             }
           }
@@ -301,23 +301,41 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.25, 3.1.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj": {
+    "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
+        "projectUniqueName": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
         "projectName": "Diagrammatic.Core",
-        "projectPath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
+        "projectPath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
         "packagesPath": "C:\\Users\\rmaxton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\obj\\",
+        "outputPath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rmaxton\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -383,7 +401,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Wssg6K/X13sFseEaNTIjGa9e0Ul4NqDfu3td2fl/H74WH3OE6Fae+NsxNP66+zxhDPmat5eCXQwdeC3xneDm0g==",
+  "dgSpecHash": "Ves4fzF9GBf59dMxlS7gyaU2rz7wVLbJAC9pG9blN6dhuLw4sy7UzIcgtgek1Bb+8Z6ppcsOEPFCbWtPD0EUDg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj",
+  "projectFilePath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core.Tests\\Diagrammatic.Core.Tests.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\rmaxton\\.nuget\\packages\\expecto\\9.0.2\\expecto.9.0.2.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\expecto.visualstudio.testadapter\\10.0.2\\expecto.visualstudio.testadapter.10.0.2.nupkg.sha512",
@@ -53,7 +53,11 @@
     "C:\\Users\\rmaxton\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\rmaxton\\.nuget\\packages\\yolodev.expecto.testsdk\\0.11.1\\yolodev.expecto.testsdk.0.11.1.nupkg.sha512"
+    "C:\\Users\\rmaxton\\.nuget\\packages\\yolodev.expecto.testsdk\\0.11.1\\yolodev.expecto.testsdk.0.11.1.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\rmaxton\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
   ],
   "logs": []
 }

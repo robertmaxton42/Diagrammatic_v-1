@@ -1,8 +1,14 @@
 namespace Diagrammatic
 open Higher
 open Lazy
+<<<<<<< Updated upstream
 open NatTypes
 open FunctorExt
+=======
+//open NatTypes
+open FunctorExt
+open Fix
+>>>>>>> Stashed changes
 
 module PHOGraph =
 
@@ -11,6 +17,7 @@ module PHOGraph =
   //let lazy_itemwise lzyL = 
   //  Seq.init l
 
+<<<<<<< Updated upstream
   let force (x: Lazy<_>) = x.Force ()
   let delay x = lazy x
 
@@ -21,6 +28,11 @@ module PHOGraph =
   let itfix f = 
     let rec itfix' f = Seq.map (f << itfix') << f
     itfix' f
+=======
+  //let itfix f = 
+  //  let rec itfix' f = Seq.map (f << itfix') << f
+  //  itfix' f
+>>>>>>> Stashed changes
 
   //let rec fix f x = f (fix f) x
   //let eval thunk = thunk ()
@@ -57,7 +69,11 @@ module PHOGraph =
       let v' = f v
       if v = v' then v else fixVal v' f
 
+<<<<<<< Updated upstream
     let gfold (maplink: 't -> 'c) (fixreduce: (Lazy<'t> seq -> Lazy<'c> seq) -> 'c) (ev: #Functor<'F>) (freduce: App<'F, Lazy<'c>> -> 'c) = 
+=======
+    let gfold (maplink: 't -> 'c) (fixreduce: (Lazy<'t seq> -> 'c seq) -> 'c) (ev: #Functor<'F>) (freduce: App<'F, Lazy<'c>> -> 'c) = 
+>>>>>>> Stashed changes
       let rec transform =
         //let mapreduce = freduce << ev.LazyMap transform << force
         //let cyclef (cycle: 't seq -> App<'F, GraphRec<'F, 't>> seq) = (function | Lazy(x) -> lazy (cycle x))
@@ -65,7 +81,12 @@ module PHOGraph =
         | Ref x -> maplink x
         | Mu cycle ->
             let transreduce x = lazy (freduce << ev.LazyMap transform) x
+<<<<<<< Updated upstream
             fixreduce (fun branchesin -> let branchesout = cycle branchesin in Seq.map transreduce branchesout)
+=======
+            fixreduce ((Seq.map transreduce) << cycle)
+            //fixreduce (fun branchesin -> let branchesout = cycle branchesin in Seq.map transreduce branchesout)
+>>>>>>> Stashed changes
             //fixreduce (fun branches -> 
             //              lazy (Seq.map (freduce << ev.LazyMap transform) << cycle) ((Seq.map (freduce << ev.LazyMap transform) << cycle) (force branches)))
         | In subg -> (freduce << ev.LazyMap transform) subg
@@ -74,10 +95,27 @@ module PHOGraph =
 
     let fold (ev: #Functor<'F>) (freduce: App<'F, Lazy<'c>> -> 'c) (k: 'c) =
       gfold id (fun g -> (force << Seq.head << g) (Seq.initInfinite (fun _ -> lazy k))) ev freduce
+<<<<<<< Updated upstream
 
     let cfold (ev: #Functor<'F>) (freduce: App<'F, Lazy<'t>> -> 't) =
       gfold id (Seq.head << fix) ev freduce
 
+=======
+
+    //let cfold (ev: #Functor<'F>) (freduce: App<'F, Lazy<'t>> -> 't) =
+    //  gfold id (Seq.head << fix) ev freduce
+
+    let cfold (ev: #Functor<'F>) (freduce: App<'F, Lazy<'t>> -> 't) =
+      let rec transform =
+        function
+        | Ref x -> x
+        | Mu cycle ->
+            let transreduce x = lazy (freduce << ev.LazyMap transform) x
+            Seq.head << fix ((Seq.map transreduce) << cycle)
+        | In subg -> (freduce << ev.LazyMap transform) subg
+      transform
+
+>>>>>>> Stashed changes
     let sfold (ev: #Functor<'F>) (freduce: App<'F, Lazy<'t>> -> 't) (k: 't) =
       gfold id (Seq.head << ((fixVal (Seq.initInfinite (fun _ -> k))) << lower_thunk)) ev freduce
 
@@ -112,12 +150,13 @@ module PHOTypes =
     let streamf2seq = function
       | StreamCons (hd, tl) -> seq { yield hd; yield! tl }
 
-    let elems<'a> =
-      PHOGraph.Graph.fold (new StreamBaseFunctor<'a>()) streamf2list []
+    //let elems<'a> =
+    //  PHOGraph.Graph.fold (new StreamBaseFunctor<'a>()) streamf2list []
     
     //let linearize<'a> =
     //  PHOGraph.Graph.cfold (new StreamBaseFunctor<'a>()) streamf2seq
   
+<<<<<<< Updated upstream
   let onetwof = function 
     | branchesin -> 
         seq {
@@ -127,5 +166,17 @@ module PHOTypes =
         } 
 
   let onetwo = PHOGraph.Mu onetwof
+=======
+    let linearize<'a> (ev: #Functor<'F>) =
+      let rec transform =
+        function
+        | PHOGraph.GraphRec.Ref x -> x
+        | PHOGraph.GraphRec.Mu cycle ->
+            let transreduce x = lazy (streamf2seq << ev.LazyMap transform) x
+            Seq.head << fix ((Seq.map transreduce) << cycle)
+        | PHOGraph.GraphRec.In subg -> (streamf2seq << ev.LazyMap transform) subg
+      transform
+
+>>>>>>> Stashed changes
 
 

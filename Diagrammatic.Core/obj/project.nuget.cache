@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rc/S7LDlV/83qIbPI8fYUMnWHJj5IdC082bt54biMrvrYnfIvjAKEBfyOdplgIBFp2s66Y4ionQX3HkZBcpmYA==",
+  "dgSpecHash": "ObE+o7kcbw8GdsQUSNbtZrlKqdnUVzdfj7kfv2pc7UUlTPw21EZXnIjlkM2h9fHixW6YHSgYAz/wyIvIiSzArw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
+  "projectFilePath": "c:\\Users\\rmaxton\\Documents\\Coding\\Diagrammatic\\Diagrammatic.Core\\Diagrammatic.Core.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\rmaxton\\.nuget\\packages\\expecto\\9.0.2\\expecto.9.0.2.nupkg.sha512",
     "C:\\Users\\rmaxton\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",

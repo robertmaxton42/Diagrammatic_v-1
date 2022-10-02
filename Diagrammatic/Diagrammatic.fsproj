@@ -8,6 +8,10 @@
     <Compile Include="Higher\*"/>
     <Compile Include="Brand.fs" />
     <Compile Include="Lazy.fs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="Fix.fs" />
+>>>>>>> Stashed changes
     <Compile Include="LazyFunctor.fs" />
     <Compile Include="NatTypes.fs" />
     <Compile Include="PHOAS.fs" />

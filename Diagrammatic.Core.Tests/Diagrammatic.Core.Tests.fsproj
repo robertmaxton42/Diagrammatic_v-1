@@ -10,6 +10,7 @@
     <Compile Include="Main.fs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Diagrammatic\Diagrammatic.fsproj" />
     <ProjectReference Include="..\Diagrammatic.Core\Diagrammatic.Core.fsproj" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />

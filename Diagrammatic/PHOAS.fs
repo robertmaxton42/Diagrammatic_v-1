@@ -1,12 +1,32 @@
 namespace Diagrammatic
 open Higher
 open Lazy
+open NatTypes
+open FunctorExt
 
 module PHOGraph =
 
-  let fix f = 
-    let rec fix' f = lazy f (fix' f) 
-    (fix' f).Value
+  //let rec lazyfix (f:Lazy<'a> -> Lazy<'a>) =  f <<= (lazyfix f)
+
+  //let lazy_itemwise lzyL = 
+  //  Seq.init l
+
+  let force (x: Lazy<_>) = x.Force ()
+  let delay x = lazy x
+
+  let fix f =
+    let rec fix' f = lazy f (fix' f)
+    force (fix' f)
+
+  let itfix f = 
+    let rec itfix' f = Seq.map (f << itfix') << f
+    itfix' f
+
+  //let rec fix f x = f (fix f) x
+  //let eval thunk = thunk ()
+  //let thunkify v = fun () -> v
+  //let lift_thunk f = fun thunk -> fun () -> f (thunk ())
+  //let lower_thunk (f: (unit -> 'a) -> (unit -> 'b)) = eval << f << thunkify
 
   //Current plan: Keep Abstract, make GraphRec public, but make the library only really accept Graphs and not arbitrary
   //GraphRec's. Or, something like that. The functions need to be able to operate on arbitrarily-typed GraphRecs, 
@@ -19,7 +39,7 @@ module PHOGraph =
     // Defines a map of tree roots to trees
     // First element is 'this node' by convention; folds other than gfold
     // are written with that assumption
-    | Mu of ('a seq -> App<'F, GraphRec<'F, 'a>> seq) 
+    | Mu of (Lazy<'a> seq -> App<'F, GraphRec<'F, 'a>> seq) 
     //Recursive graph structure
     | In of App<'F, GraphRec<'F, 'a>>
 
@@ -34,32 +54,32 @@ module PHOGraph =
     //let private force (x: Lazy<'a>) = x.Value
 
     let rec private fixVal v f = 
-      let v' = f (lazy v)
+      let v' = f v
       if v = v' then v else fixVal v' f
 
-    let gfold (maplink: 't -> 'c) (fixreduce: (Lazy<'t seq> -> 'c seq) -> 'c) (ev: #Functor<'F>) (freduce: Lazy<App<'F, 'c>> -> 'c) = 
-      let rec transform graph = 
-        match graph with
+    let gfold (maplink: 't -> 'c) (fixreduce: (Lazy<'t> seq -> Lazy<'c> seq) -> 'c) (ev: #Functor<'F>) (freduce: App<'F, Lazy<'c>> -> 'c) = 
+      let rec transform =
+        //let mapreduce = freduce << ev.LazyMap transform << force
+        //let cyclef (cycle: 't seq -> App<'F, GraphRec<'F, 't>> seq) = (function | Lazy(x) -> lazy (cycle x))
+        function
         | Ref x -> maplink x
-        //Theory: The unconditional force is okay because there's an implicit lazy wrapper in <|<
-        | Mu cycle -> fixreduce (Seq.map (freduce <|< ev.Map transform) << cycle << force)
-        //| Mu cycle -> fixreduce (fun (heads: Lazy<'t seq>) -> force (lazyz {
-        //              let! hs = heads
-        //              let branches = cycle hs
-        //              let fmapreduce = freduce <|< ev.Map transform
-        //              Seq.map fmapreduce branches
-        //            }))  
-        | In subg -> (freduce <|< ev.Map transform) subg
+        | Mu cycle ->
+            let transreduce x = lazy (freduce << ev.LazyMap transform) x
+            fixreduce (fun branchesin -> let branchesout = cycle branchesin in Seq.map transreduce branchesout)
+            //fixreduce (fun branches -> 
+            //              lazy (Seq.map (freduce << ev.LazyMap transform) << cycle) ((Seq.map (freduce << ev.LazyMap transform) << cycle) (force branches)))
+        | In subg -> (freduce << ev.LazyMap transform) subg
       transform
 
-    let fold (ev: #Functor<'F>) (freduce: App<'F, 'c> -> 'c) (k: 'c) =
-      gfold id (fun g -> (Seq.head << g) (lazy Seq.initInfinite (fun _ -> k))) ev (freduce << force)
 
-    let cfold (ev: #Functor<'F>) (freduce: Lazy<App<'F, 't>> -> 't)=
+    let fold (ev: #Functor<'F>) (freduce: App<'F, Lazy<'c>> -> 'c) (k: 'c) =
+      gfold id (fun g -> (force << Seq.head << g) (Seq.initInfinite (fun _ -> lazy k))) ev freduce
+
+    let cfold (ev: #Functor<'F>) (freduce: App<'F, Lazy<'t>> -> 't) =
       gfold id (Seq.head << fix) ev freduce
 
-    let sfold (ev: #Functor<'F>) (freduce: Lazy<App<'F, 't>> -> 't) (k: 't) =
-      gfold id (Seq.head << (fixVal (Seq.initInfinite (fun _ -> k)))) ev freduce
+    let sfold (ev: #Functor<'F>) (freduce: App<'F, Lazy<'t>> -> 't) (k: 't) =
+      gfold id (Seq.head << ((fixVal (Seq.initInfinite (fun _ -> k))) << lower_thunk)) ev freduce
 
 module PHOTypes =
   type StreamBase<'a, 'r> = Cons of hd: 'a * tl: 'r    
@@ -95,17 +115,17 @@ module PHOTypes =
     let elems<'a> =
       PHOGraph.Graph.fold (new StreamBaseFunctor<'a>()) streamf2list []
     
-    let linearize<'a> =
-      PHOGraph.Graph.cfold (new StreamBaseFunctor<'a>()) streamf2seq
+    //let linearize<'a> =
+    //  PHOGraph.Graph.cfold (new StreamBaseFunctor<'a>()) streamf2seq
   
-  let lazyhead (s: Lazy<#seq<_>>) = Seq.head |<< s
-  let lazyhead s = Seq.head |<< s
-  let test s = Cons (2, PHOGraph.Ref (Seq.head |<< s))
+  let onetwof = function 
+    | branchesin -> 
+        seq {
+            Cons (1, PHOGraph.In ( StreamBase.Inj <| 
+                    Cons (2, (PHOGraph.Ref (Seq.head branchesin)))
+            )) |> StreamBase.Inj
+        } 
 
-  let onetwo = PHOGraph.Mu (fun branches -> 
-    seq {
-        Cons (1, PHOGraph.In ( StreamBase.Inj <| 
-          Cons (2, (PHOGraph.Ref (Seq.head << branches)))
-        )) |> StreamBase.Inj
-    } )
+  let onetwo = PHOGraph.Mu onetwof
+
 
